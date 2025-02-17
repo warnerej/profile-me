@@ -21,7 +21,7 @@ export default function RootLayout({
 
         {/* Footer (stays at bottom) */}
         <footer className="bg-gray-800 text-white p-4 text-center">
-          © 2025 My Website
+          © 2025 Elliot's Website
         </footer>
       </body>
     </html>
