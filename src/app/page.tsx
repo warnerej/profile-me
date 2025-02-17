@@ -15,6 +15,16 @@ export default function HomePage() {
       <section id="schooling" className="h-screen flex items-center justify-center">
         <h1 className="text-4xl font-bold">Schooling</h1>
       </section>
+
+      {/* Extras Section */}
+      <section id="extras" className="h-screen flex items-center justify-center">
+      <h1 className="text-4xl font-bold">Extras</h1>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contacts" className="h-screen flex items-center justify-center">
+      <h1 className="text-4xl font-bold">Contacts</h1>
+      </section>
     </div>
   );
 }

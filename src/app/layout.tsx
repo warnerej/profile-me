@@ -12,6 +12,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <a href="#experience" className="block text-white hover:text-hovertext">Experience</a>
             <a href="#projects" className="block text-white hover:text-hovertext">Projects</a>
             <a href="#schooling" className="block text-white hover:text-hovertext">Schooling</a>
+            <a href="#extras" className="block text-white hover:text-hovertext">Extras</a>
+            <a href="#contacts" className="block text-white hover:text-hovertext">Contacts</a>
           </nav>
         </div>
       </body>
