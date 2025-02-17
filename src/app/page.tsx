@@ -12,7 +12,7 @@ export default function HomePage() {
       </section>
 
       {/* Schooling Section */}
-      <section id="schooling" className="h-screen flex items-center justify-center bg-gray-600">
+      <section id="schooling" className="h-screen flex items-center justify-center">
         <h1 className="text-4xl font-bold">Schooling</h1>
       </section>
     </div>
