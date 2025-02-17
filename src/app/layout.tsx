@@ -1,28 +1,19 @@
 import "./globals.css";
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="bg-gray-900 text-white min-h-screen flex flex-col">
-        {/* Navbar */}
-        <nav className="bg-blue-500 text-white p-4">
-          <a href="/" className="mr-4">
-            Home
-          </a>
-          <a href="/about">About</a>
-        </nav>
+      <body className="bg-background text-text min-h-screen flex">
+        {/* Main Content Container */}
+        <div className="flex-1 p-4">{children}</div>
 
-        {/* Main Content (takes up remaining space) */}
-        <main className="flex-1 p-4">{children}</main>
-
-        {/* Footer (stays at bottom) */}
-        <footer className="bg-gray-800 text-white p-4 text-center">
-          © 2025 Elliot's Website
-        </footer>
+        {/* Floating Sidebar */}
+        <div className="fixed right-4 top-1/2 transform -translate-y-1/2 bg-scrollbar p-4 rounded-lg shadow-lg">
+          <nav className="space-y-4">
+            <a href="#experience" className="block text-white hover:text-hovertext">Experience</a>
+            <a href="#projects" className="block text-white hover:text-hovertext">Projects</a>
+            <a href="#schooling" className="block text-white hover:text-hovertext">Schooling</a>
+          </nav>
+        </div>
       </body>
     </html>
   );
