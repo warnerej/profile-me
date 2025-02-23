@@ -1,65 +1,40 @@
-export default function HomePage() {
-  return (
-    <div className="space-y-32 p-8">
-      {/* Work Experience Section */}
-      <section
-        id="experience"
-        className="h-screen flex items-center justify-center"
-      >
-        <div className="flex w-full max-w-6xl h-[80%]">
-          {/* Image Section */}
-          <div className="w-1/2 flex items-center justify-center">
-            <img
-              src="/lcsimage.jpg"
-              alt="Work Image"
-              className="w-full h-full object-cover rounded-lg shadow-lg"
-            />
-          </div>
+async function getSection(){
+  const res = await fetch('http://127.0.0.1:8090/api/collections/sections/records?page=1&perPage=10')
+  const data = await res.json() 
+  return data?.items as any[]
+}
 
-          {/* Text Section */}
-          <div className="w-1/2 flex flex-col justify-center pl-10">
-            <h1 className="text-4xl font-bold mb-4">London Computer Systems</h1>
-            <p className="text-xl text-gray-600">
-              - Did some pretty cool stuff I guess
-              <br />
-              - Worked on a team of 17 to effectively do something
-              <br />- Probably something else that I did that will be added
-            </p>
-          </div>
+export default async function HomePage() {
+  const sections = await getSection()
+
+    return (
+      <div>
+        <div>
+          {sections?.map((section) => {
+            return <Section key={section.id} section={section} />
+          })}
         </div>
-      </section>
+      </div>
+    );
+  }
 
-      {/* Projects Section */}
-      <section
-        id="projects"
-        className="h-screen flex items-center justify-center"
-      >
-        <h1 className="text-4xl font-bold">Projects</h1>
-      </section>
+  function Section({ section }: any) {
+    const {id, title, content, created } = section || {}
 
-      {/* Schooling Section */}
-      <section
-        id="schooling"
-        className="h-screen flex items-center justify-center"
-      >
-        <h1 className="text-4xl font-bold">Schooling</h1>
-      </section>
-
-      {/* Extras Section */}
-      <section
-        id="extras"
-        className="h-screen flex items-center justify-center"
-      >
-        <h1 className="text-4xl font-bold">Extras</h1>
-      </section>
-
-      {/* Contact Section */}
-      <section
-        id="contacts"
-        className="h-screen flex items-center justify-center"
-      >
-        <h1 className="text-4xl font-bold">Contacts</h1>
-      </section>
-    </div>
-  );
+    return (
+      <div>
+        <section
+          id={title}
+          className="h-screen flex items-center justify-center"
+        >
+            {/* Text Section */}
+            <div className="w-1/2 flex flex-col justify-center pl-10">
+              <h1 className="text-4xl font-bold mb-4">{title}</h1>
+              <p className="text-xl text-gray-600">
+                {content}
+              </p>
+            </div>
+        </section>
+      </div>
+    )
 }
