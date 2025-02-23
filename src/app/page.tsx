@@ -27,7 +27,6 @@ export default async function HomePage() {
           id={title}
           className="h-screen flex items-center justify-center"
         >
-            {/* Text Section */}
             <div className="w-1/2 flex flex-col justify-center pl-10">
               <h1 className="text-4xl font-bold mb-4">{title}</h1>
               <p className="text-xl text-gray-600">
