@@ -12,7 +12,7 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         text: "#FF9D23",
-        hovertext: "#C14600",
+        hovertext: "#000000",
         scrollbar: "#E5D0AC"
       },
     },
